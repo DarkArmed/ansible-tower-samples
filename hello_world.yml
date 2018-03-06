@@ -4,4 +4,7 @@
     - name: Hello Message
       debug:
         msg: "Hello World!"
-
+    - name: OPS!
+      debug:
+        msg: "OPS!"
+      failed_when: inventory_hostname == 'localhost'
