@@ -1,0 +1,23 @@
+- name: Play Sample 1
+  hosts: all
+  roles:
+    - role_sample_1
+    - role_sample_2
+
+  tasks:
+    - name: Play Sample 1 Finish
+      debug:
+        msg: "Play Sample 1!"
+
+- name: Play Sample 2
+  hosts: all
+  roles:
+    - role_sample_2
+    - role_sample_1
+
+  tasks:
+    - name: Play Sample 2 Finish
+      debug:
+        msg: "Play Sample 2!"
+
+    - include: jobs/job_sample.yml
